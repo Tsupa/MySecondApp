@@ -2,28 +2,59 @@
     <div class="col-md-9">
         <h1 class="display-4">Welcome, Java Hipster! Non Ba ouai Morray {{uneValeur}}</h1>
         <p class="lead">This is your homepage morray poto</p>
-
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="#" target="_blank">
+                <img src="../../content/images/grand-canyon.jpg" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="#" target="_blank">
+                <img src="../../content/images/snow-mountain.jpg" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <a href="#" target="_blank">
+                <img src="../../content/images/the-barn-at-mormon-row.jpg" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-9">
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span *ngIf="account"
-                   > You are logged in as user "{{account.login}}". </span>
+                > You are logged in as user "{{account.login}}". </span>
             </div>
-
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span>If you want to </span>
                 <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
             </div>
-
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span>You don't have an account yet?</span>
                 <a class="alert-link" routerLink="register">Register a new account</a>
             </div>
         </div>
-
         <p>
             If you have any question on JHipster:
         </p>
-
         <ul>
             <li><a href="http://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
             <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
@@ -31,7 +62,6 @@
             <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
             <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
         </ul>
-
         <p>
             <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
         </p>
