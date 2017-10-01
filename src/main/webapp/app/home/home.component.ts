@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
+import { Home } from './home.service';
 
 import { Account, LoginModalService, Principal } from '../shared';
 
@@ -8,7 +9,7 @@ import { Account, LoginModalService, Principal } from '../shared';
     selector: 'jhi-home',
     templateUrl: './home.component.html',
     styleUrls: [
-        'home.css'
+    'home.css'
     ]
 
 })
@@ -20,8 +21,9 @@ export class HomeComponent implements OnInit {
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
-        private eventManager: JhiEventManager
-    ) {
+        private eventManager: JhiEventManager,
+        private homeService: Home
+        ) {
     }
 
     ngOnInit() {
@@ -32,6 +34,9 @@ export class HomeComponent implements OnInit {
         this.eventManager.subscribe('unMessage', (message) => {
             this.setValeur(message.content);
         });
+        this.homeService.getAllItems().subscribe((data) => {
+            console.log('good ' + JSON.stringify(data.json()));
+        }, (response) => console.log('error'));
     }
 
     registerAuthenticationSuccess() {

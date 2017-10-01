@@ -61,7 +61,7 @@ public class ItemServiceIntTest {
 
 	@Test
 	public void testGetItemById() {
-		Item itemActual = itemService.getAllItems().get(0);
+		ItemDTO itemActual = itemService.getAllItems().get(0);
 
 		Item itemObtainedById = itemService.getItemById(itemActual.getId());
 
@@ -71,7 +71,7 @@ public class ItemServiceIntTest {
 
 	@Test
 	public void testGetItemByName() {
-		Item itemActual = itemService.getAllItems().get(0);
+		ItemDTO itemActual = itemService.getAllItems().get(0);
 
 		Item itemObtainedById = itemService.getItemByName(itemActual.getName());
 

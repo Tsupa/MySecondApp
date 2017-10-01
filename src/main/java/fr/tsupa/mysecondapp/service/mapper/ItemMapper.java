@@ -1,5 +1,9 @@
 package fr.tsupa.mysecondapp.service.mapper;
 
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
 import org.springframework.stereotype.Service;
 
 import fr.tsupa.mysecondapp.domain.Item;
@@ -31,6 +35,11 @@ public class ItemMapper {
 
 			return item;
 		}
+	}
+
+	public List<ItemDTO> mapItemsToItemDTOs(List<Item> items) {
+		return items.stream().filter(Objects::nonNull)
+				.map(this::mapItemToItemDTO).collect(Collectors.toList());
 	}
 
 }

@@ -27,8 +27,8 @@ public class ItemService {
 		return item;
 	}
 
-	public List<Item> getAllItems() {
-		return this.itemRepository.findAll();
+	public List<ItemDTO> getAllItems() {
+		return itemMapper.mapItemsToItemDTOs(this.itemRepository.findAll());
 	}
 
 	public List<Item> getActivableItems(boolean active) {

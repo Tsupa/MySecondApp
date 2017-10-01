@@ -23,7 +23,7 @@ export class LeftSideComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-        console.log('im here');
+
     }
 
     ngOnDestroy() {
