@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 
 import { MySecondAppSharedModule } from '../shared';
 
-import { HOME_ROUTE, HomeComponent, Home } from './';
+import { HOME_ROUTE, HomeComponent } from './';
 
 @NgModule({
     imports: [
@@ -16,7 +16,6 @@ import { HOME_ROUTE, HomeComponent, Home } from './';
     entryComponents: [
     ],
     providers: [
-    Home
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

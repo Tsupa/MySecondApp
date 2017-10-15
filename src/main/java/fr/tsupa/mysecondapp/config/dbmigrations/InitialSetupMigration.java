@@ -181,8 +181,8 @@ public class InitialSetupMigration {
 	private Set<Category> getCategories() {
 		Set<Category> categories = new HashSet<>();
 		Category type1 = new Category();
-		type1.setId("type-1");
-		type1.setName("name-type1");
+		type1.setId("category-1");
+		type1.setName("name-category1");
 		type1.setDescription("description1");
 		type1.setActive(true);
 		type1.setCreatedBy("system");
@@ -190,8 +190,8 @@ public class InitialSetupMigration {
 		categories.add(type1);
 
 		Category category2 = new Category();
-		category2.setId("type-2");
-		category2.setName("name-type2");
+		category2.setId("category-2");
+		category2.setName("name-category2");
 		category2.setDescription("description2");
 		category2.setActive(true);
 		category2.setCreatedBy("system");
@@ -199,8 +199,8 @@ public class InitialSetupMigration {
 		categories.add(category2);
 
 		Category category3 = new Category();
-		category3.setId("type-3");
-		category3.setName("name-type3");
+		category3.setId("category-3");
+		category3.setName("name-category3");
 		category3.setDescription("description3");
 		category3.setActive(true);
 		category3.setCreatedBy("system");

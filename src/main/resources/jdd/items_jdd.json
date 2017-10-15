@@ -1,0 +1,220 @@
+{ 
+    "_id" : "item-1", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Peut-on imaginer un monde sans Jean Valjean, Cosette, Gavroche, Javert ou Fantine, à jamais vivants au Panthéon de l'esprit humain ?\r\nEn 1862 paraissent Les Misérables, qui désignent toutes les victimes d'un ordre social dont Victor Hugo condamne les injustices. Immense épopée populaire, le roman est emporté dans l'air de Paris et de ses bas-fonds, l'odeur des barricades et de la Révolution. Il deviendra l'une des œuvres les plus lues dans le monde.\r\nOn dit que lorsque les premières épreuves sortaient des presses, les correcteurs et les imprimeurs pleuraient.", 
+    "duration" : NumberInt(10), 
+    "name" : "Les Misérables", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "_id" : "type-1", 
+        "active" : true, 
+        "description" : "description1", 
+        "duration" : NumberInt(10), 
+        "name" : "Livre", 
+        "created_by" : "system", 
+        "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+        "last_modified_date" : ISODate("2017-09-29T20:35:26.038+0000")
+    }, 
+    "categories" : [
+        {
+            "_id" : "type-3", 
+            "active" : true, 
+            "description" : "description3", 
+            "name" : "Livre-scolaire", 
+            "created_by" : "system", 
+            "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+            "last_modified_date" : ISODate("2017-09-29T20:35:26.038+0000")
+        }, 
+        {
+            "_id" : "type-2", 
+            "active" : true, 
+            "description" : "description2", 
+            "name" : "Roman", 
+            "created_by" : "system", 
+            "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+            "last_modified_date" : ISODate("2017-09-29T20:35:26.038+0000")
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "Les_miserables.jpg"
+}
+{ 
+    "_id" : "item-2", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "L'intrigue se concentre autour de Rick Grimes et de son groupe depuis leur confrontation avec Negan et son acte punitif pour les asservir, et la rencontre avec de nouvelles communautés.", 
+    "duration" : NumberInt(10), 
+    "name" : "The Walking Dead - L'intégrale de la saison 7", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "DVD"
+    }, 
+    "categories" : [
+        {
+            "name" : "Drame", 
+            "_id" : "Drame"
+        }, 
+        {
+            "name" : "Horreur", 
+            "_id" : "Horreur"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "the_walking_dead_s7.jpg"
+}
+{ 
+    "_id" : "item-3", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "C'était avant qu'elle ne devienne Wonder Woman, à l'époque où elle était encore Diana, princesse des Amazones et combattante invincible. Un jour, un pilote américain s'écrase sur l'île paradisiaque où elle vit, à l'abri des fracas du monde. Lorsqu'il lui raconte qu'une guerre terrible fait rage à l'autre bout de la planète, Diana quitte son havre de paix, convaincue qu'elle doit enrayer la menace. En s'alliant aux hommes dans un combat destiné à mettre fin à la guerre, Diana découvrira toute l'étendue de ses pouvoirs? et son véritable destin.", 
+    "duration" : NumberInt(10), 
+    "name" : "Wonder Woman", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "DVD"
+    }, 
+    "categories" : [
+        {
+            "name" : "Science-fiction", 
+            "_id" : "Science-fiction"
+        }, 
+        {
+            "name" : "Action et aventure", 
+            "_id" : "Action et aventure"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "wonder_woman.jpg"
+}
+{ 
+    "_id" : "item-4", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Maintenant que Dom et Letty sont en lune de miel, que Brian et Mia se sont rangés et que le reste de l'équipe a été disculpé, la bande de globetrotteurs retrouve un semblant de vie normale. Mais quand une mystérieuse femme entraîne Dom dans le monde de la criminalité, ce dernier ne pourra éviter de trahir ses proches qui vont faire face à des épreuves qu'ils n'avaient jamais rencontrées jusqu'alors.", 
+    "duration" : NumberInt(10), 
+    "name" : "Fast & Furious 8", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "DVD"
+    }, 
+    "categories" : [
+        {
+            "name" : "Thriller", 
+            "_id" : "Thriller"
+        }, 
+        {
+            "name" : "Action et aventure", 
+            "_id" : "Action et aventure"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "fast_and_furious.jpg"
+}
+{ 
+    "_id" : "item-5", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Peter Quill, Rocket, Drax, Gamora et Bébé Groot terrassent un monstre qui menaçait le peuple des Souverains. En guise de récompense, la prêtresse Ayesha livre aux justiciers Nebula, la soeur maléfique de Gamora. Mais avant de partir, Rocket vole un lot de piles à la souveraine. Outrée, cette dernière lance sa flotte à la poursuite des Gardiens. À la suite d?un phénomène magnétique qui détruit toute l'armada, le vaisseau des fugitifs traverse un portail qui les mène auprès d?Ego, un être céleste et tout-puissant qui prétend être le père de Peter.", 
+    "duration" : NumberInt(10), 
+    "name" : "LES GARDIENS DE LA GALAXIE VOLUME 2", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "DVD"
+    }, 
+    "categories" : [
+        {
+            "name" : "Comédie", 
+            "_id" : "Comédie"
+        }, 
+        {
+            "name" : "Action et aventure", 
+            "_id" : "Action et aventure"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "les_gardiens_de_la_galexie.jpg"
+}
+{ 
+    "_id" : "item-6", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Pris au piège suite à un procédé vil et méprisable, Sanji devra-t-il se résoudre à n'être que l'objet d'un mariage stratégique ? ! De leur côté, Luffy et ses camarades se retrouvent finalement aux prises avec les hommes de Big Mom afin de ramener Sanji dans l'équipage. Que va-t-il advenir d'eux ? ! Les aventures de Luffy à la poursuite du One Piece continuent ! !", 
+    "duration" : NumberInt(10), 
+    "name" : "One piece - Edition originale Vol.84", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "Manga"
+    }, 
+    "categories" : [
+        {
+            "name" : "Arts martiaux et Combats"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "one_piece.jpg"
+}
+{ 
+    "_id" : "item-7", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Cyborg a un squelette en instrus solides et dépouillées, allant à l’essentiel, où s’accrochent les muscles d’un vrai flow, technique et sûr. A l’heure où les faiseurs saturent le marché de trap molle, de nappes synthétiques mornes, de clichés enfilés comme des perles, pitchant des épisodes de Gomorra en les repeignant à l’autotune jusqu’à l’écœurement, Nekfeu bouscule ce vide sidéral avec un disque sanguin, complexe et ardent. Voix en avant, pour mettre en scène le discours et la démonstration d’une vraie maîtrise de la langue. Ca cogne, ça rebondit, ça balance du sens, ça raconte des histoires, ça laisse coi, comme devant les meilleurs effets spéciaux d’un blockbuster hollywoodien, et c’est pourtant fait, seulement, avec des mots et une science de les transmettre. Il y a de l’amour, du vrai, des doutes, des fêlures et de l’esbroufe, c’est profondément incarné, comme le rap l’est de moins en moins, et c’est bien ce qui fait sa force ici. Nekfeu y est épaulé par une théorie de rappeurs sbires, Nepal, Murkage Dave, Alpha Wann, Sneazzy, S.Pri Noir, Nemir, 2Zer, Mekra, Doums, Framal, Jazzy Bazz, Crystal Kay, mais aussi par la soyeuse Clara Lucciani, étoile montante de la chanson esthète, et tout le monde, ça se sent, fait les efforts nécessaires pour se hisser à la hauteur des chansons de leur hôte. A la place des gadgets électro de rigueur, il y a des gifles de saxophone qui vous déchirent l’âme. Ca fait sens, un Cyborg avec une âme, c’est un peu la définition de cet album transhumaniste et spectaculaire.", 
+    "duration" : NumberInt(10), 
+    "name" : "Cyborg", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "CD"
+    }, 
+    "categories" : [
+        {
+            "name" : "Rap", 
+            "_id" : "Rap"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "cyborg_nekfeu.jpg"
+}
+{ 
+    "_id" : "item-8", 
+    "_class" : "fr.tsupa.mysecondapp.domain.Item", 
+    "active" : true, 
+    "description" : "Straight Outta Compton is the debut studio album from American hip hop group N.W.A, released August 8, 1988. The album is widely regarded as the pioneering record of gangsta rap; and with its ever-present profanity and violent lyrics, it helped to give birth to the then-new sub-genre of hip hop. Includes the global smash hit singles Straight Outta Compton , Express Yourself and Gangsta Gangsta", 
+    "duration" : NumberInt(10), 
+    "name" : "Straight Outta Compton", 
+    "number" : NumberInt(1), 
+    "type" : {
+        "name" : "Vinyle"
+    }, 
+    "categories" : [
+        {
+            "name" : "Rap", 
+            "_id" : "Rap"
+        }
+    ], 
+    "created_by" : "system", 
+    "created_date" : ISODate("2017-09-29T20:35:26.038+0000"), 
+    "last_modified_by" : "system", 
+    "last_modified_date" : ISODate("2017-09-29T20:35:26.077+0000"), 
+    "image_url" : "Straight_Outta_Compton.jpg"
+}

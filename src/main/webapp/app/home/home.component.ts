@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
-import { Home } from './home.service';
+import { ItemService, Item } from '../entities';
 
 import { Account, LoginModalService, Principal } from '../shared';
 
@@ -17,12 +17,13 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     uneValeur: string;
+    items: Item[];
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private homeService: Home
+        private itemService: ItemService
         ) {
     }
 
@@ -34,8 +35,13 @@ export class HomeComponent implements OnInit {
         this.eventManager.subscribe('unMessage', (message) => {
             this.setValeur(message.content);
         });
-        this.homeService.getAllItems().subscribe((data) => {
-            console.log('good ' + JSON.stringify(data.json()));
+        this.itemService.getAllItems().subscribe((data) => {
+            for (const item of data){
+                console.log('item categories : ' + JSON.stringify(item.categories));
+                item.imageUrl = require('../../content/images/' + item.imageUrl);
+            }
+            /*console.log('good ' + JSON.stringify(data));*/
+            this.items = data;
         }, (response) => console.log('error'));
     }
 

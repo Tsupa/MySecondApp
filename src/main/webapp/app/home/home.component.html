@@ -1,42 +1,45 @@
 <div class="row">
     <div class="col-md-9">
-        <h1 class="display-4">Welcome, Java Hipster! Non Ba ouai Morray {{uneValeur}}</h1>
+        <h1 class="display-4"> Page d'accueil {{uneValeur}}</h1>
         <p class="lead">This is your homepage morray poto</p>
     </div>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <div class="thumbnail">
-            <a href="#" target="_blank">
-                <img src="../../content/images/grand-canyon.jpg" alt="Lights" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
+<!-- <div class="row" *ngIf ="items">
+    <div *ngFor="let item of items" class="col-md-4">
+
+      <a href="#" *ngFor="let category of item.categories" class="badge badge-info">{{category.name}}</a>
+      <div class="thumbnail">
+        <a href="#" target="_blank">
+            <img src="{{ item.imageUrl }}" alt="Lights" height="200" width="200">
+                <img [src]="'images/' + item.imageUrl" alt="Lights" height="200" width="150">
+                <img src="../../content/images/snow-mountain.jpg" alt="Lights" height="200" width="150">
+                {{item.imageUrl}}
             </a>
+            <blockquote class="blockquote">
+                <p class="mb-0">{{item.name}}</p>
+                <footer class="blockquote-footer">{{item.description | slice:0:50}} ...</footer>
+            </blockquote>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="thumbnail">
-            <a href="#" target="_blank">
-                <img src="../../content/images/snow-mountain.jpg" alt="Lights" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="thumbnail">
-            <a href="#" target="_blank">
-                <img src="../../content/images/the-barn-at-mormon-row.jpg" alt="Lights" style="width:100%">
-                <div class="caption">
-                    <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-            </a>
+</div> -->
+<div class="row" *ngIf ="items">
+    <div *ngFor="let item of items" class="col-sm-4 card-deck">
+        <div class="card" style="margin-bottom: 20px;">
+            <img class="card-img-top" src="{{ item.imageUrl }}" height="310" width="310" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="card-title">{{item.name}}</h4>
+                <p class="card-text">{{item.description | slice:0:150}} ...</p>
+                <a href="#" *ngFor="let category of item.categories" class="badge badge-info" style="margin-left: 3px;">{{category.name}}</a>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
         </div>
     </div>
 </div>
-<div class="row">
+
+
+<!-- <div class="row">
     <div class="col-md-9">
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
@@ -65,5 +68,5 @@
         <p>
             <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
         </p>
-    </div>
-</div>
+    </div> 
+</div> -->
