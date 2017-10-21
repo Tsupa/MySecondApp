@@ -9,6 +9,7 @@ export class Item {
     public number?: number;
     public imageUrl?: string;
     public categories?: Category[];
+    public lastModifiedDate?: String;
 
     constructor(
         id?: any,
@@ -19,6 +20,7 @@ export class Item {
         number?: number,
         imageUrl?: string,
         categories?: Category[],
+        lastModifiedDate?: String
         ) {
         this.id = id ? id : null;
         this.active = active ? active : null;
@@ -28,5 +30,6 @@ export class Item {
         this.number = number ? number : null;
         this.imageUrl = imageUrl ? imageUrl : null;
         this.categories = categories ? categories : null;
+        this.lastModifiedDate = lastModifiedDate ? lastModifiedDate : null;
     }
 }

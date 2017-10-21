@@ -32,7 +32,7 @@
                 <a href="#" *ngFor="let category of item.categories" class="badge badge-info" style="margin-left: 3px;">{{category.name}}</a>
             </div>
             <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
+                <small class="text-muted">Dernière mise à jour {{item.lastModifiedDate | amLocale:'fr' | amTimeAgo}}</small>
             </div>
         </div>
     </div>

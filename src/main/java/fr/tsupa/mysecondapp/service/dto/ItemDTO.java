@@ -1,5 +1,6 @@
 package fr.tsupa.mysecondapp.service.dto;
 
+import java.time.Instant;
 import java.util.Set;
 
 import fr.tsupa.mysecondapp.domain.Category;
@@ -25,6 +26,8 @@ public class ItemDTO {
 
 	private Set<Category> categories;
 
+	private Instant lastModifiedDate;
+
 	public ItemDTO() {
 
 	}
@@ -32,12 +35,13 @@ public class ItemDTO {
 	public ItemDTO(Item item) {
 		this(item.getId(), item.isActive(), item.getDescription(),
 				item.getDuration(), item.getName(), item.getNumber(),
-				item.getImageUrl(), item.getType(), item.getCategories());
+				item.getImageUrl(), item.getType(), item.getCategories(),
+				item.getLastModifiedDate());
 	}
 
 	public ItemDTO(String id, boolean active, String description, int duration,
 			String name, int number, String imageUrl, Type type,
-			Set<Category> categories) {
+			Set<Category> categories, Instant lastModifiedDate) {
 		this.id = id;
 		this.active = active;
 		this.description = description;
@@ -47,6 +51,7 @@ public class ItemDTO {
 		this.imageUrl = imageUrl;
 		this.type = type;
 		this.categories = categories;
+		this.lastModifiedDate = lastModifiedDate;
 	}
 
 	public String getId() {
@@ -119,6 +124,14 @@ public class ItemDTO {
 
 	public void setCategories(Set<Category> categories) {
 		this.categories = categories;
+	}
+
+	public Instant getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+	public void setLastModifiedDate(Instant lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
 	}
 
 	@Override

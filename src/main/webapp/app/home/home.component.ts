@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
         });
         this.itemService.getAllItems().subscribe((data) => {
             for (const item of data){
-                console.log('item categories : ' + JSON.stringify(item.categories));
+                console.log('item last_modified_date : ' + JSON.stringify(item.lastModifiedDate));
                 item.imageUrl = require('../../content/images/' + item.imageUrl);
             }
             /*console.log('good ' + JSON.stringify(data));*/
