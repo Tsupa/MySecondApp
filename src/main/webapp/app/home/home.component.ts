@@ -32,9 +32,26 @@ export class HomeComponent implements OnInit {
             this.account = account;
         });
         this.registerAuthenticationSuccess();
-        this.eventManager.subscribe('unMessage', (message) => {
+        this.eventManager.subscribe('updateHomePage', (message) => {
+            if (message.content === 'Nouveautés') {
+                this.getAllItems();
+            } else {
+                this.getItemsByType(message.content);
+            }
             this.setValeur(message.content);
         });
+        this.getAllItems();
+    }
+
+    registerAuthenticationSuccess() {
+        this.eventManager.subscribe('authenticationSuccess', (message) => {
+            this.principal.identity().then((account) => {
+                this.account = account;
+            });
+        });
+    }
+
+    getAllItems() {
         this.itemService.getAllItems().subscribe((data) => {
             for (const item of data){
                 console.log('item.imageUrl : ' + JSON.stringify(item.imageUrl));
@@ -47,14 +64,6 @@ export class HomeComponent implements OnInit {
             /*console.log('good ' + JSON.stringify(data));*/
             this.items = data;
         }, (response) => console.log('error'));
-    }
-
-    registerAuthenticationSuccess() {
-        this.eventManager.subscribe('authenticationSuccess', (message) => {
-            this.principal.identity().then((account) => {
-                this.account = account;
-            });
-        });
     }
 
     isAuthenticated() {

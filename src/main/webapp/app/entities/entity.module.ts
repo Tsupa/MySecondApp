@@ -2,7 +2,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 /* jhipster-needle-add-entity-module-import - JHipster will add entity modules imports here */
 
-import { ItemService } from './';
+import { ItemService, TypeService } from './';
 
 @NgModule({
     imports: [
@@ -10,7 +10,7 @@ import { ItemService } from './';
     ],
     declarations: [],
     entryComponents: [],
-    providers: [ItemService],
+    providers: [ItemService, TypeService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MySecondAppEntityModule {}
