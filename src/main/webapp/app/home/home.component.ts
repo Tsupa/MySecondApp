@@ -37,8 +37,12 @@ export class HomeComponent implements OnInit {
         });
         this.itemService.getAllItems().subscribe((data) => {
             for (const item of data){
-                console.log('item last_modified_date : ' + JSON.stringify(item.lastModifiedDate));
-                item.imageUrl = require('../../content/images/' + item.imageUrl);
+                console.log('item.imageUrl : ' + JSON.stringify(item.imageUrl));
+                if (item.imageUrl === null) {
+                    item.imageUrl = require('../../content/images/not-found.png');
+                } else {
+                    item.imageUrl = require('../../content/images/' + item.imageUrl);
+                }
             }
             /*console.log('good ' + JSON.stringify(data));*/
             this.items = data;
@@ -55,6 +59,23 @@ export class HomeComponent implements OnInit {
 
     isAuthenticated() {
         return this.principal.isAuthenticated();
+    }
+
+    getItemsByType(typeName: string) {
+        console.log('le nom du type cliqué est ' + typeName);
+
+        this.itemService.getItemsByTypeName(typeName).subscribe((data) => {
+            for (const item of data){
+                if (item.imageUrl === null) {
+                    item.imageUrl = require('../../content/images/not-found.png');
+                } else {
+                    item.imageUrl = require('../../content/images/' + item.imageUrl);
+                }
+            }
+            /*console.log('good ' + JSON.stringify(data));*/
+            this.items = data;
+            this.setValeur(typeName);
+        }, (response) => console.log('error'));
     }
 
     login() {

@@ -1,4 +1,3 @@
-import { Category } from './category.model';
 
 export class Item {
     public id?: any;
@@ -6,9 +5,10 @@ export class Item {
     public description?: string;
     public duration?: number;
     public name?: string;
+    public typeName?: string;
     public number?: number;
     public imageUrl?: string;
-    public categories?: Category[];
+    public categoriesName?: string[];
     public lastModifiedDate?: String;
 
     constructor(
@@ -17,9 +17,10 @@ export class Item {
         description?: string,
         duration?: number,
         name?: string,
+        typeName?: string,
         number?: number,
         imageUrl?: string,
-        categories?: Category[],
+        categoriesName?: string[],
         lastModifiedDate?: String
         ) {
         this.id = id ? id : null;
@@ -27,9 +28,10 @@ export class Item {
         this.description = description ? description : null;
         this.duration = duration ? duration : null;
         this.name = name ? name : null;
+        this.typeName = typeName ? typeName : null;
         this.number = number ? number : null;
         this.imageUrl = imageUrl ? imageUrl : null;
-        this.categories = categories ? categories : null;
+        this.categoriesName = categoriesName ? categoriesName : null;
         this.lastModifiedDate = lastModifiedDate ? lastModifiedDate : null;
     }
 }

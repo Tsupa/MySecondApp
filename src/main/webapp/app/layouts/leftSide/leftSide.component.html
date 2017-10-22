@@ -1,5 +1,8 @@
 <div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': selectedItem == elem}" (click)="listClick($event, elem)" *ngFor="let elem of lists">
-    {{elem}}
-  </a>
+	<a href="#" class="list-group-item list-group-item-action"> Nouveautés<span class="badge badge-primary badge-pill">13</span></a>
+	<li class="list-group-item list-group-item-info"> <h5 class="mb-1">Items par type</h5></li>
+	<a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': selectedItem == elem}" (click)="listClick($event, elem)" *ngFor="let elem of lists">
+		{{elem}}<span class="badge badge-primary badge-pill">13</span>
+	</a>
+	<li class="list-group-item list-group-item-info"> <h5 class="mb-1">Items par catégorie</h5></li>
 </div>

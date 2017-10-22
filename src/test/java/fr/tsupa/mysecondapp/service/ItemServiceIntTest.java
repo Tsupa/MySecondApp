@@ -26,6 +26,8 @@ public class ItemServiceIntTest {
 	@Autowired
 	private ItemMapper itemMapper;
 
+	private final String TYPE_NAME = "DVD";
+
 	@Test
 	public void testCreateAndRemoveItem() {
 		ItemDTO itemDTO = getItemDTOTest();
@@ -45,7 +47,21 @@ public class ItemServiceIntTest {
 		int nbBeforeInsert = itemService.getAllItems().size();
 		Item itemCreate = itemService.createItem(getItemDTOTest());
 		int nbAfterInsert = itemService.getAllItems().size();
+		System.out.println("nb : " + nbBeforeInsert);
+		assertThat(nbBeforeInsert + 1).isEqualTo(nbAfterInsert);
 
+		itemService.removeItem(itemCreate.getId());
+
+	}
+
+	@Test
+	public void testGetItemsByTypeName() {
+		int nbBeforeInsert = itemService.getItemsByTypeName(TYPE_NAME).size();
+		Item itemCreate = itemService.createItem(getItemDTOTest());
+		int nbAfterInsert = itemService.getItemsByTypeName(TYPE_NAME).size();
+		// int nbAfterInsert = itemService.getAllItems().size();
+		System.out.println("nbBeforeInsert : " + nbBeforeInsert);
+		System.out.println("nbAfterInsert : " + nbAfterInsert);
 		assertThat(nbBeforeInsert + 1).isEqualTo(nbAfterInsert);
 
 		itemService.removeItem(itemCreate.getId());
@@ -65,7 +81,8 @@ public class ItemServiceIntTest {
 
 		Item itemObtainedById = itemService.getItemById(itemActual.getId());
 
-		assertThat(itemObtainedById).isEqualTo(itemActual);
+		assertThat(itemObtainedById)
+				.isEqualTo(itemMapper.mapItemDTOToItem(itemActual));
 
 	}
 
@@ -75,8 +92,8 @@ public class ItemServiceIntTest {
 
 		Item itemObtainedById = itemService.getItemByName(itemActual.getName());
 
-		assertThat(itemObtainedById).isEqualTo(itemActual);
-
+		assertThat(itemObtainedById)
+				.isEqualTo(itemMapper.mapItemDTOToItem(itemActual));
 	}
 
 	private ItemDTO getItemDTOTest() {
@@ -89,6 +106,7 @@ public class ItemServiceIntTest {
 		item.setDuration(10);
 		item.setCreatedBy("system");
 		item.setCreatedDate(Instant.now());
+		item.setTypeName(TYPE_NAME);
 
 		return new ItemDTO(item);
 	}

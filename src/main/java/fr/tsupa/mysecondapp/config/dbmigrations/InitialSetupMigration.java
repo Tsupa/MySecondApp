@@ -118,10 +118,11 @@ public class InitialSetupMigration {
 		item.setDuration(10);
 		item.setCreatedBy("system");
 		item.setCreatedDate(Instant.now());
-		item.setType(types.get(0));
-		item.setCategories(
-				categories.stream().limit(2).collect(Collectors.toSet()));
-		mongoTemplate.save(item);
+		item.setTypeName(types.get(0).getName());
+		item.setCategoriesName(categories.stream().limit(2)
+				.map(categorie -> categorie.getName())
+				.collect(Collectors.toSet()));
+		mongoTemplate.save(item);//
 
 	}
 

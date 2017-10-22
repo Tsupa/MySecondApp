@@ -3,9 +3,7 @@ package fr.tsupa.mysecondapp.service.dto;
 import java.time.Instant;
 import java.util.Set;
 
-import fr.tsupa.mysecondapp.domain.Category;
 import fr.tsupa.mysecondapp.domain.Item;
-import fr.tsupa.mysecondapp.domain.Type;
 
 public class ItemDTO {
 	private String id;
@@ -22,9 +20,9 @@ public class ItemDTO {
 
 	private String imageUrl;
 
-	private Type type;
+	private String typeName;
 
-	private Set<Category> categories;
+	private Set<String> categoriesName;
 
 	private Instant lastModifiedDate;
 
@@ -35,13 +33,13 @@ public class ItemDTO {
 	public ItemDTO(Item item) {
 		this(item.getId(), item.isActive(), item.getDescription(),
 				item.getDuration(), item.getName(), item.getNumber(),
-				item.getImageUrl(), item.getType(), item.getCategories(),
-				item.getLastModifiedDate());
+				item.getImageUrl(), item.getTypeName(),
+				item.getCategoriesName(), item.getLastModifiedDate());
 	}
 
 	public ItemDTO(String id, boolean active, String description, int duration,
-			String name, int number, String imageUrl, Type type,
-			Set<Category> categories, Instant lastModifiedDate) {
+			String name, int number, String imageUrl, String typeName,
+			Set<String> categoriesName, Instant lastModifiedDate) {
 		this.id = id;
 		this.active = active;
 		this.description = description;
@@ -49,8 +47,8 @@ public class ItemDTO {
 		this.name = name;
 		this.number = number;
 		this.imageUrl = imageUrl;
-		this.type = type;
-		this.categories = categories;
+		this.typeName = typeName;
+		this.categoriesName = categoriesName;
 		this.lastModifiedDate = lastModifiedDate;
 	}
 
@@ -110,20 +108,20 @@ public class ItemDTO {
 		this.imageUrl = imageUrl;
 	}
 
-	public Type getType() {
-		return type;
+	public String getTypeName() {
+		return typeName;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
 
-	public Set<Category> getCategories() {
-		return categories;
+	public Set<String> getCategoriesName() {
+		return categoriesName;
 	}
 
-	public void setCategories(Set<Category> categories) {
-		this.categories = categories;
+	public void setCategoriesName(Set<String> categoriesName) {
+		this.categoriesName = categoriesName;
 	}
 
 	public Instant getLastModifiedDate() {
@@ -138,7 +136,7 @@ public class ItemDTO {
 	public String toString() {
 		return "ItemDTO [active=" + active + ", description=" + description
 				+ ", duration=" + duration + ", name=" + name + ", number="
-				+ number + ", imageUrl=" + imageUrl + ", type=" + type
-				+ ", categories=" + categories + "]";
+				+ number + ", imageUrl=" + imageUrl + ", typeName=" + typeName
+				+ ", categories=" + categoriesName + "]";
 	}
 }

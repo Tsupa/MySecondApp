@@ -38,11 +38,11 @@ public class Item extends AbstractAuditingEntity implements Serializable {
 	@Field("image_url")
 	private String imageUrl;
 
-	@JsonIgnore
-	private Type type;
+	@Field("typeName")
+	private String typeName;
 
 	@JsonIgnore
-	private Set<Category> categories;
+	private Set<String> categoriesName;
 
 	public String getId() {
 		return id;
@@ -100,20 +100,20 @@ public class Item extends AbstractAuditingEntity implements Serializable {
 		this.imageUrl = imageUrl;
 	}
 
-	public Type getType() {
-		return type;
+	public String getTypeName() {
+		return typeName;
 	}
 
-	public void setType(Type type) {
-		this.type = type;
+	public void setTypeName(String typeName) {
+		this.typeName = typeName;
 	}
 
-	public Set<Category> getCategories() {
-		return categories;
+	public Set<String> getCategoriesName() {
+		return categoriesName;
 	}
 
-	public void setCategories(Set<Category> categories) {
-		this.categories = categories;
+	public void setCategoriesName(Set<String> categoriesName) {
+		this.categoriesName = categoriesName;
 	}
 
 	@Override

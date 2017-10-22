@@ -29,9 +29,8 @@ public class ItemMapper {
 			item.setName(itemDTO.getName());
 			item.setNumber(itemDTO.getNumber());
 			item.setImageUrl(itemDTO.getImageUrl());
-			// TODO : Creer des mapper pour ces deux types
-			item.setType(itemDTO.getType());
-			item.setCategories(itemDTO.getCategories());
+			item.setTypeName(itemDTO.getTypeName());
+			item.setCategoriesName(itemDTO.getCategoriesName());
 
 			return item;
 		}

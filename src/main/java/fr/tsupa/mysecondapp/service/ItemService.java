@@ -1,6 +1,7 @@
 package fr.tsupa.mysecondapp.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
@@ -29,6 +30,14 @@ public class ItemService {
 
 	public List<ItemDTO> getAllItems() {
 		return itemMapper.mapItemsToItemDTOs(this.itemRepository.findAll());
+	}
+
+	public List<ItemDTO> getItemsByTypeName(String typeName) {
+		List<Item> items = this.itemRepository.findAll();
+		List<Item> itemsFiltre = items.stream()
+				.filter(item -> typeName.equals(item.getTypeName()))
+				.collect(Collectors.toList());
+		return itemMapper.mapItemsToItemDTOs(itemsFiltre);
 	}
 
 	public List<Item> getActivableItems(boolean active) {
