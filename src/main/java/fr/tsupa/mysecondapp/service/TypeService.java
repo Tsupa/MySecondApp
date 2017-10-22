@@ -1,5 +1,6 @@
 package fr.tsupa.mysecondapp.service;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -59,7 +60,8 @@ public class TypeService {
 					.getItemsByTypeName(type.getName()).size();
 			typeView.setNumberAssociatedItems(numberAssociatedItems);
 			return typeView;
-		}).collect(Collectors.toList());
+		}).sorted(Comparator.comparing(TypeVM::getName))
+				.collect(Collectors.toList());
 	}
 
 	public Type getTypeByName(String name) {
