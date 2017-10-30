@@ -17,4 +17,9 @@ export class ItemService {
     getItemsByTypeName(typeName: string): Observable<Item[]> {
         return this.http.get(`${this.resourceUrl}/byTypeName/${typeName}`).map((res: Response) => res.json());
     }
+
+    find(idItem: string): Observable<Item> {
+        return this.http.get(`${this.resourceUrl}/byIdItem/${idItem}`).map((res: Response) => res.json());
+    }
+
 }

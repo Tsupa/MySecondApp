@@ -13,6 +13,7 @@ import com.codahale.metrics.annotation.Timed;
 
 import fr.tsupa.mysecondapp.service.ItemService;
 import fr.tsupa.mysecondapp.service.dto.ItemDTO;
+import io.github.jhipster.web.util.ResponseUtil;
 
 @RestController
 @RequestMapping("/api")
@@ -37,6 +38,13 @@ public class ItemResource {
 			@PathVariable String typeName) {
 		List<ItemDTO> items = itemService.getItemsByTypeName(typeName);
 		return new ResponseEntity<>(items, HttpStatus.OK);
+	}
+
+	@GetMapping("/items/byIdItem/{idItem}")
+	@Timed
+	public ResponseEntity<ItemDTO> getItemById(@PathVariable String idItem) {
+		return ResponseUtil.wrapOrNotFound(
+				itemService.getItemById(idItem).map(ItemDTO::new));
 	}
 
 }

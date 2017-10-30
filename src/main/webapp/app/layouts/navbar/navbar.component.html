@@ -8,6 +8,14 @@
             <span class="navbar-title">MySecondApp</span> <span class="navbar-version">{{version}}</span>
         </a>
     </div>
+    <div class="navbar jh-navbar" style="margin-left:5%;">
+        <form class="form-inline">
+          <div class="input-group">
+            <input #box name="search" type="text" class="form-control" (keyup.enter)="onEnter(box.value)" (selectItem)="selectedItem($event)" placeholder="Recherche" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="model" [ngbTypeahead]="search" style="width: 578px;">
+            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-fw fa-search" aria-hidden="true"></i></span>
+          </div>
+        </form>
+    </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">

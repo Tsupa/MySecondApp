@@ -39,7 +39,8 @@ public class ItemServiceIntTest {
 
 		itemService.removeItem(itemCreate.getId());
 
-		assertThat(itemService.getItemById(itemCreate.getId())).isNull();
+		assertThat(itemService.getItemById(itemCreate.getId()).isPresent())
+				.isFalse();
 	}
 
 	@Test
@@ -79,7 +80,8 @@ public class ItemServiceIntTest {
 	public void testGetItemById() {
 		ItemDTO itemActual = itemService.getAllItems().get(0);
 
-		Item itemObtainedById = itemService.getItemById(itemActual.getId());
+		Item itemObtainedById = itemService.getItemById(itemActual.getId())
+				.get();
 
 		assertThat(itemObtainedById)
 				.isEqualTo(itemMapper.mapItemDTOToItem(itemActual));

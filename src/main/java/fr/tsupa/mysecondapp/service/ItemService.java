@@ -1,6 +1,7 @@
 package fr.tsupa.mysecondapp.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
@@ -44,8 +45,8 @@ public class ItemService {
 		return this.itemRepository.findAllByActive(active);
 	}
 
-	public Item getItemById(String id) {
-		return this.itemRepository.findOneById(id).orElse(null);
+	public Optional<Item> getItemById(String id) {
+		return this.itemRepository.findOneById(id);
 	}
 
 	public Item getItemByName(String name) {

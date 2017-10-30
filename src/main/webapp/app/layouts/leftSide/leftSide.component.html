@@ -3,8 +3,8 @@
 	<a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': selectedItem == 'Nouveautés'}" (click)="listClick($event, 'Nouveautés')"> Nouveautés<span class="badge badge-primary">13</span></a>
 
 	<li class="list-group-item list-group-item-info"> <h5 class="mb-1">Items par type</h5></li>
-	<a href="#" class="list-group-item list-group-item-action" [ngClass]="{'active': selectedItem == type.name}" (click)="listClick($event, type.name)" *ngFor="let type of types">
-		{{type.name}}<span class="badge badge-primary badge-pill">{{type.numberAssociatedItems}}</span>
+	<a [routerLink]="['home', type.name]" class="list-group-item list-group-item-action" [ngClass]="{'active': selectedItem == type.name}" (click)="listClick($event, type.name)" *ngFor="let type of types">
+		{{type.name}}<span class="badge badge-info badge-pill">{{type.numberAssociatedItems}}</span>
 	</a>
 
 	<li class="list-group-item list-group-item-info"> <h5 class="mb-1">Items par catégorie</h5></li>

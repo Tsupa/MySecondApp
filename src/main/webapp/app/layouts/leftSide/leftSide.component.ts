@@ -47,7 +47,7 @@ export class LeftSideComponent implements OnInit, OnDestroy {
 
     listClick(event, newValue) {
         this.selectedItem = newValue;
-        this.eventManager.broadcast({ name: 'updateHomePage',
-                content: newValue});
+        /*this.eventManager.broadcast({ name: 'updateHomePage',
+                content: newValue});*/
     }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager } from 'ng-jhipster';
 import { ItemService, Item } from '../entities';
+import { Subscription } from 'rxjs/Rx';
+import { ActivatedRoute } from '@angular/router';
 
 import { Account, LoginModalService, Principal } from '../shared';
 
@@ -18,16 +20,20 @@ export class HomeComponent implements OnInit {
     modalRef: NgbModalRef;
     uneValeur: string;
     items: Item[];
+    private subscription: Subscription;
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private itemService: ItemService
+        private itemService: ItemService,
+        private route: ActivatedRoute
         ) {
+        console.log('HomeComponent : construvtoor');
     }
 
     ngOnInit() {
+        console.log('HomeComponent : ngOnInit');
         this.principal.identity().then((account) => {
             this.account = account;
         });
@@ -35,12 +41,17 @@ export class HomeComponent implements OnInit {
         this.eventManager.subscribe('updateHomePage', (message) => {
             if (message.content === 'Nouveautés') {
                 this.getAllItems();
-            } else {
-                this.getItemsByType(message.content);
             }
             this.setValeur(message.content);
         });
-        this.getAllItems();
+        this.subscription = this.route.params.subscribe((params) => {
+            console.log('HomeComponent : subscription ' + params['typeName']);
+            if (params['typeName'] === undefined) {
+                this.getAllItems();
+            } else {
+                this.getItemsByType(params['typeName']);
+            }
+        });
     }
 
     registerAuthenticationSuccess() {
@@ -52,9 +63,10 @@ export class HomeComponent implements OnInit {
     }
 
     getAllItems() {
+        console.log('HomeComponent : getAllItems');
         this.itemService.getAllItems().subscribe((data) => {
             for (const item of data){
-                console.log('item.imageUrl : ' + JSON.stringify(item.imageUrl));
+                // console.log('item.imageUrl : ' + JSON.stringify(item.imageUrl));
                 if (item.imageUrl === null) {
                     item.imageUrl = require('../../content/images/not-found.png');
                 } else {
@@ -71,8 +83,7 @@ export class HomeComponent implements OnInit {
     }
 
     getItemsByType(typeName: string) {
-        console.log('le nom du type cliqué est ' + typeName);
-
+        console.log('HomeComponent : getItemsByType');
         this.itemService.getItemsByTypeName(typeName).subscribe((data) => {
             for (const item of data){
                 if (item.imageUrl === null) {
@@ -81,7 +92,7 @@ export class HomeComponent implements OnInit {
                     item.imageUrl = require('../../content/images/' + item.imageUrl);
                 }
             }
-            /*console.log('good ' + JSON.stringify(data));*/
+            // console.log('good ' + JSON.stringify(data));
             this.items = data;
             this.setValeur(typeName);
         }, (response) => console.log('error'));

@@ -1,0 +1,23 @@
+<div *ngIf="item">
+	<button type="submit"
+	routerLink="/user-management"
+	class="btn btn-info">
+	<span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+	</button>
+	<div class="media">
+	  <img class="mr-3" src="{{ item.imageUrl }}" alt="Generic placeholder image">
+	  <div class="media-body">
+	    <h1 class="mt-0">{{item.name}}</h1>
+	    {{item.description}}
+	    <dl class="row" style="margin-top: 15px;">
+		<dt class="col-sm-3">Type</dt>
+		<dd class="col-sm-9">{{item.typeName}}</dd>
+		<dt class="col-sm-3">Catégorie(s)</dt>
+		<dd class="col-sm-9">{{item.categoriesName.join(", ")}}</dd>
+		<dt class="col-sm-3">Dernière mise à jour</dt>
+		<dd class="col-sm-9">{{item.lastModifiedDate}}</dd>
+		</dd>
+	</dl> 
+	  </div>
+	</div>
+</div>

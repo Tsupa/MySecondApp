@@ -30,8 +30,16 @@ export class Item {
         this.name = name ? name : null;
         this.typeName = typeName ? typeName : null;
         this.number = number ? number : null;
-        this.imageUrl = imageUrl ? imageUrl : null;
+        this.setURLImage(imageUrl);
         this.categoriesName = categoriesName ? categoriesName : null;
         this.lastModifiedDate = lastModifiedDate ? lastModifiedDate : null;
+    }
+
+    setURLImage(nameImage: string) {
+        if (nameImage === null) {
+            this.imageUrl = require('../../../content/images/not-found.png');
+        } else {
+            this.imageUrl = require('../../../content/images/' + nameImage);
+        }
     }
 }

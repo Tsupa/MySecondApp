@@ -24,7 +24,7 @@
 <div class="row" *ngIf ="items">
 <div *ngFor="let item of items" class="col-sm-4 card-deck">
     <div class="card" style="margin-bottom: 20px;">
-        <img class="card-img-top" src="{{ item.imageUrl }}" height="310" width="310" alt="Card image cap">
+        <a [routerLink]="['/item', item.id]"><img class="card-img-top" src="{{ item.imageUrl }}" height="310" width="310" alt="Card image cap"></a>
         <div class="card-body">
             <h4 class="card-title">{{item.name}}
             <a class="alert-link" (click)="getItemsByType(item.typeName)"><span class="badge badge-success">{{item.typeName}}</span></a>
